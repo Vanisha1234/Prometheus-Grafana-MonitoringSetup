@@ -6,20 +6,20 @@ It provides real-time insights into **CPU**, **memory**, and **disk utilization*
 ---
 
 ## Table of Contents
-- [Project Overview](#prometheus-grafana-monitoring-setup)
-- [Tech Stack](#tech-stack)
-- [Key Components](#key-components)
-- [Project Environment Setup](#project-environment-setup)
-  - [Prometheus Setup on Linux](#prometheus-setup-on-linux)
-  - [Grafana Setup on Linux](#grafana-setup-on-linux)
-  - [Node Exporter Setup on Target Linux VM](#node-exporter-setup-on-target-linux-vm)
-- [Configurations & Integrations](#configurations--integrations)
-  - [Connect Grafana with Prometheus](#connect-grafana-with-prometheus)
-  - [Import Node Exporter Dashboard](#import-node-exporter-dashboard)
-- [Alert Notifications via Teams](#alert-notifications-via-teams)
-  - [Create a Microsoft Teams Incoming Webhook](#create-a-microsoft-teams-incoming-webhook)
-  - [Add a Microsoft Teams Notification Channel in Grafana](#add-a-microsoft-teams-notification-channel-in-grafana)
-  - [Create an Alert Rule for Core Components](#create-an-alert-rule-for-core-components-like-cpu-memory-and-disk)
+1. [Project Overview](#prometheus-grafana-monitoring-setup)
+2. [Tech Stack](#tech-stack)
+3. [Key Components](#key-components)
+4. [Project Environment Setup](#project-environment-setup)
+   - [Prometheus Setup on Linux](#prometheus-setup-on-linux)
+   - [Grafana Setup on Linux](#grafana-setup-on-linux)
+   - [Node Exporter Setup on Target Linux VM](#node-exporter-setup-on-target-linux-vm)
+5. [Configurations & Integrations](#configurations--integrations)
+   - [Connect Grafana with Prometheus](#connect-grafana-with-prometheus)
+   - [Import Node Exporter Dashboard](#import-node-exporter-dashboard)
+6. [Alert Notifications via Teams](#alert-notifications-via-teams)
+   - [Create a Microsoft Teams Incoming Webhook](#create-a-microsoft-teams-incoming-webhook)
+   - [Add a Microsoft Teams Notification Channel in Grafana](#add-a-microsoft-teams-notification-channel-in-grafana)
+   - [Create an Alert Rule for Core Components](#create-an-alert-rule-for-core-components-like-cpu-memory-and-disk)
 
 ---
 
