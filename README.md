@@ -8,7 +8,7 @@ It provides real-time insights into **CPU**, **memory**, and **disk utilization*
 ## Table of Contents
 1. [Project Overview](#prometheus-grafana-monitoring-setup)
 2. [Tech Stack](#tech-stack)
-3. [Key Components](#key-components)
+3. [Key Components](#key-components-and-flow)
 4. [Project Environment Setup](#project-environment-setup)
    - [Prometheus Setup on Linux](#prometheus-setup-on-linux)
    - [Grafana Setup on Linux](#grafana-setup-on-linux)
@@ -31,11 +31,34 @@ It provides real-time insights into **CPU**, **memory**, and **disk utilization*
 
 ---
 
-## Key Components
-- **Prometheus:** Collects system metrics from Node Exporter and stores time-series data.
-- **Node Exporter:** Runs on the target VM to expose hardware and OS-level metrics.
-- **Grafana:** Visualizes metrics through custom dashboards and manages alerting rules.
-- **Microsoft Teams Integration:** Configured via an incoming webhook to send real-time notifications when CPU, memory, or disk usage exceeds defined threshold.
+## Key Components and Flow
+- **Node Exporter:**
+  1. Installed on the target virtual machine being monitor.
+     
+  2. Exposes system-level metrics (CPU, memory, disk, network) & makes them available at an HTTP endpoint:
+ ```bash
+ http://<node-ip>:9100/metrics
+ ```
+
+- **Prometheus:** 
+  1. Prometheus periodically scrapes metrics from Node Exporter.
+  2. Inside Prometheus:
+     
+     > ***a. Retrieval module:*** Pulls (retrieves) metrics data. \
+     > ***b. Storage module:*** Stores it in the Time Series Database (TSDB). \
+     > ***c. HTTP Server module:*** Accepts PromQL queries.
+
+- **Grafana:**
+  1. Grafana connects to Prometheus as a data source.
+     
+  2. When we build dashboards in Grafana, the graphs are based on PromQL queries that Grafana sends to the Prometheus HTTP API in order to retrieve data.
+     
+  3. Prometheus returns the requested data, and Grafana visualizes metrics through custom dashboards.
+     
+- **Microsoft Teams Integration:**
+  1. Grafana manages alerts natively and we can define threshold-based alert rules.
+     
+  2. Alerts are sent to Microsoft Teams via an incoming webhook for real-time updates when CPU, memory, or disk usage exceeds defined threshold..
 
 ---
 
