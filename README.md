@@ -1,7 +1,8 @@
 # Prometheus-Grafana Monitoring Setup
 
-This project demonstrates a complete infrastructure monitoring setup using **Prometheus**, **Node Exporter**, and **Grafana**, configured natively on Linux.  
-It provides real-time insights into **CPU**, **memory**, and **disk utilization** for a virtual machine and automatically sends alerts to **Microsoft Teams** when resource usage crosses a defined threshold.
+This project demonstrates a complete infrastructure monitoring setup using **Prometheus**, **Node Exporter**, and **Grafana**, configured natively on Linux. It provides real-time insights into **CPU**, **memory**, and **disk utilization** for a virtual machine and automatically sends alerts to **Microsoft Teams** when resource usage crosses a defined threshold.
+
+I set up this monitoring project in my workplace to proactively track system performance and prevent last-minute issues such as high CPU utilization, low disk space, and memory exhaustion.
 
 ---
 
